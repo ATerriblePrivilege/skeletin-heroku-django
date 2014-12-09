@@ -1,3 +1,4 @@
+{% load compress %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -5,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Le styles -->
-    <link href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet" type=text/css />
-    <link href="/static/css/foobarbaz.css" rel="stylesheet" type=text/css />
+    {% compress css inline %}
+      <link rel="stylesheet" type="text/less" media="all" href="{{ STATIC_URL }}css/less/style.less" />
+      <link href="/static/css/foobarbaz.css" rel="stylesheet" type=text/css />
+    {% endcompress %}
     <!--<link href="/static/icomoon/icomoon.css" rel="stylesheet" type=text/css />-->
     <!--<link rel="shortcut icon" type="image/png" href="/static/img/favicon.ico"/>-->
     <!--<link rel="shortcut icon" type="image/png" href="http://angularfy.herokuapp.com/static/img/favicon.ico"/>-->

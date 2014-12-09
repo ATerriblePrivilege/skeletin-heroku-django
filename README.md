@@ -1,7 +1,7 @@
 skeletin-heroku-django-base
 ===========================
 
-A Simple Base Heroku Django Project
+A Simple Base Heroku Django Project with Less Compilation
 
 Instructions
 ------------
