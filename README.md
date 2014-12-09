@@ -1,7 +1,7 @@
-skeletin-heroku-django-base
+skeletin-heroku-django-auth
 ===========================
 
-A Simple Base Heroku Django Project
+A Simple Base Heroku Django Project with Authentication
 
 Instructions
 ------------
@@ -20,7 +20,9 @@ Instructions
   * `heroku create --stack cedar {{ project name }}`
 5. Push it to Heroku!
   * `git push heroku master`
-6. If you need a local dev environment db:
+6. `heroku addons:add heroku-postgresql:dev`
+7. `heroku pg:promote {{ The database that was added in the previous step }}`
+8. If you need a local dev environment db:
   1. create your local db 
   2. add the following to your venv/bin/activate script:
     * export DATABASE_URL="postgres://{{ db user }}:{{ db name }}@localhost/{{ project name }}"
