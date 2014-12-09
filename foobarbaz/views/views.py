@@ -1,6 +1,8 @@
-from django import http
+#from django import http
+from django.contrib.auth import logout as django_logout
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from django.template import RequestContext, loader
 #from foobarbaz.models import Foo
 
 #def foo(request):
@@ -10,3 +12,10 @@ from django.template import RequestContext, loader
 #    }
 #    return render(request, 'foo.html', context)
 
+@login_required
+def index(request):
+    return render(request, 'index.html', {})
+
+def logout(request):
+    django_logout(request)
+    return HttpResponseRedirect('/login')

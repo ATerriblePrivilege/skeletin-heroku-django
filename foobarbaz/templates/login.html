@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="http://bootswatch.com/superhero/bootstrap.min.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      {% if form.errors %}
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="alert alert-dismissable alert-warning">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <h4>Warning!</h4>
+            <p>Your username and password didn't match. Please try again.</p>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      <div class="jumbotron">
+        <h1>FooBarBaz</h1>
+        <p>Just a simple project.</p>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+          <form method="post" action="{% url 'django.contrib.auth.views.login' %}" class="form-horizontal">
+          {% csrf_token %}
+            <fieldset>
+              <div class="form-group">
+                <label for="id_username" class="col-lg-2 control-label">{{ form.username.label_tag }}</label>
+                <div class="col-lg-10">
+                  <input name="username" class="form-control" id="id_username" placeholder="Username" type="text" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="id_password" class="col-lg-2 control-label">{{ form.password.label_tag }}</label>
+                <div class="col-lg-10">
+                  <input name="password" class="form-control" id="id_password" placeholder="Password" type="password" />
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-3 col-lg-offset-5">
+                  <input type="hidden" name="next" value="/" />
+                  <button class="btn btn-primary" type="submit" value="login">Log Me In!</button>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
