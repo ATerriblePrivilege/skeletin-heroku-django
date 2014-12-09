@@ -1,7 +1,7 @@
 skeletin-heroku-django-base
 ===========================
 
-A Simple Base Heroku Django Project with a RestFUL API and Authentication
+A Simple Base Heroku Django Project with a RestFUL API and Authentication and Less Compilation
 
 Instructions
 ------------

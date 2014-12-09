@@ -1,0 +1,124 @@
+/*!
+ * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+@sidebar-width-large:          200px;
+@sidebar-width:                @sidebar-icon-size*3;
+//@sidebar-width: 200px;
+@sidebar-animation:            all 0.5s ease;
+@page-content-padding:         20px;
+/* Sidebar Styles */
+
+.sidebar-nav {
+  //position: absolute;
+  top: 0;
+  width: @sidebar-width-large;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  & > li {
+    text-indent: @font-size-base;
+    line-height: @line-height-large;
+    &.active a,
+    &.active a:hover {
+      background-color: @component-active-bg;
+      color: @component-active-color;
+    }
+    & > a {
+      display: block;
+      text-decoration: none;
+      padding: @sidebar-icon-size - 2 0;
+      white-space: nowrap;
+      outline: 0;
+      &:hover {
+        background-color: @nav-link-hover-bg;
+      }
+      & > .icon {
+        font-size: @sidebar-icon-size;
+        margin: 0 @sidebar-icon-size 0 0;
+      }
+    }
+    span {
+      vertical-align: middle;
+    }
+  }
+  .nav-sidebar-title {
+    font-size: ceil((@font-size-base * 0.7));
+    margin: @navbar-margin-bottom 0 0 0;
+    text-align: center;
+    text-transform: uppercase;
+    padding: @padding-small-horizontal @padding-small-vertical;
+    & > span {
+      background: none repeat scroll 0 0 @body-bg;
+      padding: 0 @padding-xs-horizontal;
+    }
+    span:after {
+      content: "";
+      height: 100%;
+      left: 32%;
+      position: absolute;
+      top: 0;
+      width: 36%;
+      z-index: -1;
+    }
+    span:before {
+      border-bottom: 1px solid;
+      content: "";
+      left: 20%;
+      position: absolute;
+      margin-top: 8px;
+      width: 60%;
+      z-index: -1;
+    }
+  }
+}
+
+/* Layout options with wrapper element */
+@font-size-smaller:    ceil(@font-size-base * 0.7);
+@sidebar-icon-size:    @font-size-base;
+@sidebar-border:       #282828;
+
+#wrapper {
+  padding-left: 0;
+  //.transition-transform(~"@sidebar-animation");
+}
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: @sidebar-width;
+  width: 0;
+  height: 100%;
+  margin-left: -@sidebar-width;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: @body-bg;
+  .transition(@sidebar-animation);
+  border-right: 1px solid @sidebar-border;
+  box-shadow: 2px 0 1px -2px rgba(0, 0, 0, 0.5);
+  &:hover {
+    width: @sidebar-width-large;
+  }
+  &:hover + #page-content-wrapper {
+    padding-left: @sidebar-width-large - @page-content-padding;
+  }
+}
+#page-content-wrapper {
+  width: 100%;
+  padding: 15px;
+  .transition(@sidebar-animation);
+}
+@media(min-width:768px) {
+  #wrapper {
+    padding-left: @sidebar-width;
+  }
+  #sidebar-wrapper {
+    width: @sidebar-width;
+  }
+  #page-content-wrapper {
+    padding: @page-content-padding;
+  }
+}
+
