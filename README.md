@@ -1,7 +1,7 @@
-skeletin-heroku-django-base
+skeletin-heroku-django-api
 ===========================
 
-A Simple Base Heroku Django Project
+A Simple Base Heroku Django Project with a RestFUL API
 
 Instructions
 ------------
